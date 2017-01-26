@@ -8,8 +8,8 @@ from .utils import sorted_by_key
 from haversine import haversine
 
 def stations_by_distance(stations, p):
-    geo=[]
-    for station in stations:
-        distance=haversine(station.coord, p)
-        geo.append((station.name, station.town, station.distance))
-    return sorted_by_key(geo, 3, 0)
+	distancelist=[]
+	for station in stations:
+		distance=haversine(station.coord, p)
+		distancelist.append ((station.name,station.town,distance))
+	return sorted_by_key (distancelist,2,0)
