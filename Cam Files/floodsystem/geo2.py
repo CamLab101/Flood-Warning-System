@@ -3,7 +3,7 @@ geographical data.
 
 """
 
-from floodsystem.utils import sorted_by_key
+from .utils import sorted_by_key
 #haversine function for distance calculation
 from haversine import haversine
 
@@ -12,4 +12,4 @@ def stations_by_distance(stations, p):
     for station in stations:
         distance=haversine(station.coord, p)
         geo.append((station.name, station.town, station.distance))
-    return geo
+    return sorted_by_key(geo, 3, 0)
