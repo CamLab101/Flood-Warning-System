@@ -3,7 +3,25 @@ geographical data.
 
 """
 
-from floodsystem.utils import sorted_by_key
+from .utils import sorted_by_key
+#haversine function for distance calculation
+from haversine import haversine
+
+#For task 1B
+def stations_by_distance(stations, p):
+    #compte distance
+    stations_by_distance=[]
+    for station in stations:
+        #use haversine function
+        distance=haversine(station.coord, p)
+        #create a list of tuples contain data of stations
+        stations_by_distance.append ((station.name,station.town,distance))
+        #output the sorted
+    return sorted_by_key (stations_by_distance,2,0)
+
+#For task 1C
+
+#For task 1D
 #returns all rivers (by name) with a monitoring station
 def rivers_with_station(stations):
     rivers_with_station=[]
