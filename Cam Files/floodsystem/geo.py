@@ -37,7 +37,8 @@ def rivers_with_station(stations):
 #maps river names (the ‘key’) to a list of stations on a given river
 def stations_by_river(stations):
     dict={}
-    for river in rivers_with_station(stations):
+    list_of_stations=rivers_with_station(stations)
+    for river in list_of_stations:
         dict [river]=[]
         for station in stations:
             if station.river==river:
@@ -46,3 +47,29 @@ def stations_by_river(stations):
                     pass
         dict[river].sort()
     return dict
+
+#for task 1E
+
+#determines the N rivers with the greatest number of monitoring stations
+def rivers_by_station_number(stations,N):
+    dict=stations_by_river(stations)
+    #list of tuples
+    num_of_stations=[]
+    for river in dict:
+        num_of_stations.append((river,len(dict[river])))
+    #sort
+    num_of_stations.sort(key=lambda tup: tup[1], reverse=True)
+    #return first N
+    nlist=[]
+    n=0
+    x=0
+    #error
+    while n<=N:
+        x+=1
+        nlist.append(num_of_stations[x])
+        if num_of_stations[x+1][1]>num_of_stations[x][1]:
+            n+=1
+        else:
+            pass
+    return nlist
+
