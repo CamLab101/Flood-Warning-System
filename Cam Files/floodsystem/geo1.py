@@ -3,29 +3,11 @@ geographical data.
 
 """
 
-<<<<<<< HEAD
-from .utils import sorted_by_key
-#haversine function for distance calculation
-from haversine import haversine
-
-def stations_by_distance(stations, p):
-	distancelist=[]
-	for station in stations:
-		distance=haversine(station.coord, p)
-		distancelist.append ((station.name,station.town,distance))
-	return sorted_by_key (distancelist,2,0)
-=======
 from floodsystem.utils import sorted_by_key
 #returns all rivers (by name) with a monitoring station
 def rivers_with_station(stations):
     rivers_with_station=[]
     for station in stations:
-<<<<<<< HEAD
-        dict[station.river]=station.name
-    return dict
-#can improve because some river names begins with 'River'
->>>>>>> master
-=======
         rivers_with_station.append(station.river)
     rivers_with_station=set(rivers_with_station)
     unique_rivers=[]
@@ -46,4 +28,3 @@ def stations_by_river(stations):
                     pass
         dict[river].sort()
     return dict
->>>>>>> master
