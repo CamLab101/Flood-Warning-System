@@ -20,6 +20,13 @@ def stations_by_distance(stations, p):
     return sorted_by_key (stations_by_distance,2,0)
 
 #For task 1C
+def stations_within_radius(stations, centre, r):
+	stations_within_radius=[]
+	distancelist=stations_by_distance(stations, centre)
+	for station in stations:
+		if station[2] < r
+		stations_within_radius.append (distancelist[0])
+	return stations_within_radius
 
 #For task 1D
 #returns all rivers (by name) with a monitoring station
