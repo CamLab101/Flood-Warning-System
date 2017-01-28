@@ -9,7 +9,7 @@ from haversine import haversine
 
 #For task 1B
 def stations_by_distance(stations, p):
-    #compte distance
+    #compute distance
     stations_by_distance=[]
     for station in stations:
         #use haversine function
@@ -21,11 +21,15 @@ def stations_by_distance(stations, p):
 
 #For task 1C
 def stations_within_radius(stations, centre, r):
+	#compute distance
 	stations_within_radius=[]
-	distancelist=stations_by_distance(stations, centre)
 	for station in stations:
-		if station[2] < r
-		stations_within_radius.append (distancelist[0])
+		#use haversine function
+		distance=haversine(station.coord, centre)
+		#create a list of stations within radius 
+		if distance < r:
+			stations_within_radius.append (station.name)
+	#output
 	return stations_within_radius
 
 #For task 1D
