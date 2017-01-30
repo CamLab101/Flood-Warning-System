@@ -63,13 +63,12 @@ def rivers_by_station_number(stations,N):
     nlist=[]
     n=0
     x=0
-    #error
-    while n<=N:
-        x+=1
+    while n<N:
         nlist.append(num_of_stations[x])
-        if num_of_stations[x+1][1]>num_of_stations[x][1]:
+        if num_of_stations[x][1]>num_of_stations[x+1][1]:
             n+=1
         else:
             pass
+        x+=1
     return nlist
 
