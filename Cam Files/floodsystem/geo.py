@@ -72,14 +72,15 @@ def rivers_by_station_number(stations,N):
     num_of_stations.sort(key=lambda tup: tup[1], reverse=True)
     #return first N
     nlist=[]
-    n=0
-    x=0
-    while n<N:
+    n=1
+    for x in range(len(num_of_stations)):
         nlist.append(num_of_stations[x])
-        if num_of_stations[x][1]>num_of_stations[x+1][1]:
-            n+=1
-        else:
+        if x==(len(num_of_stations)-1):
             pass
-        x+=1
+        else:
+            if num_of_stations[x][1]>num_of_stations[x+1][1]:
+                n+=1
+        if n > N:
+            break
     return nlist
 
