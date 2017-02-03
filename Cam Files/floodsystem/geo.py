@@ -82,5 +82,7 @@ def rivers_by_station_number(stations,N):
                 n+=1
         if n > N:
             break
+    nlist.sort(key=lambda tup: tup[0])
+    nlist.sort(key=lambda tup: tup[1], reverse=True)
     return nlist
 

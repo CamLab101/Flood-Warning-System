@@ -20,8 +20,7 @@ def test_station_by_river():
 #for task 1E
 from floodsystem.geo import rivers_by_station_number
 def test_rivers_by_station_number():
-	assert rivers_by_station_number(test_list,1)[0]==('river2', 1)
-
+	assert rivers_by_station_number(test_list,1)==[('river1', 1), ('river2', 1), ('river3', 1)]
 #for 1F
 from floodsystem.station import inconsistent_typical_range_stations
 def test_inconsistent_typical_range_stations():
