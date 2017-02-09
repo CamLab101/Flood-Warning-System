@@ -21,16 +21,17 @@ def stations_by_distance(stations, p):
 
 #For task 1C
 def stations_within_radius(stations, centre, r):
-	#compute distance
-	stations_within_radius=[]
-	for station in stations:
-		#use haversine function
-		distance=haversine(station.coord, centre)
-		#create a list of stations within radius 
-		if distance < r:
-			stations_within_radius.append (station.name)
-	#output
-	return stations_within_radius
+    #compute distance
+    stations_within_radius=[]
+    for station in stations:
+        #use haversine function
+        distance=haversine(station.coord, centre)
+        #create a list of stations within radius 
+        if distance < r:
+            stations_within_radius.append (station.name)
+        stations_within_radius.sort ()
+    #output
+    return stations_within_radius
 
 #For task 1D
 #returns all rivers (by name) with a monitoring station
