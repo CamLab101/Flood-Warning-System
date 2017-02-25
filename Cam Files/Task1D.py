@@ -17,3 +17,8 @@ dict=stations_by_river(stations)
 print(dict['River Aire'])
 print(dict['River Cam'])
 print(dict['Thames'])
+n=0
+for river in dict:
+	if len(river)>0:
+		n+= 1
+print(n)
