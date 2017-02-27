@@ -2,6 +2,7 @@
 #returns a list of tuples, where each tuple holds 
 #(1) a station at which the latest relative water level is over tol and 
 #(2) the relative water level at the station
+from floodsystem.stationdata import update_water_levels
 def stations_level_over_threshold(stations, tol):
 	list_of_tuples=[]
 	for station in stations:
@@ -17,6 +18,7 @@ def stations_level_over_threshold(stations, tol):
 #returns a list of the N stations at which the water level, relative to the typical range, is highest.
 def stations_highest_rel_level(stations, N):
 	stations_highest_rel_level=[]
+	update_water_levels(stations)
 	for station in stations:
 		if station.relative_water_level() != None:
 			stations_highest_rel_level.append((station.name, station.relative_water_level()))
