@@ -6,7 +6,6 @@ import matplotlib.dates
 def polyfit(dates, levels, p):
 	d0 = matplotlib.dates.date2num(dates[0])
 	x = matplotlib.dates.date2num(dates)-d0
-	print (x)
 	y = levels
 
 	# Find coefficients of best-fit polynomial
