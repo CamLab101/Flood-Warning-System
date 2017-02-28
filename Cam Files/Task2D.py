@@ -23,6 +23,6 @@ def run():
         print(date, level)
 
 if __name__ == "__main__":
-    print("*** Task 2D: CUED Part IA Flood Warning System ***")
+    print("*** The Advanced Flood Warning System ***")
 
     run()
