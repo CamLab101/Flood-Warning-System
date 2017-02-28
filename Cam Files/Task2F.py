@@ -23,7 +23,7 @@ def run():
 
     #Plot graph seperatedly regarding to each station
     for station in station_data:
-        dt = 2
+        dt = 3
         dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
         #make lists of date and lavel
         plot_water_level_with_fit(station.name, dates, levels, 4)
