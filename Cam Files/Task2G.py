@@ -24,12 +24,15 @@ print(len(stations_low)+len(stations_mid)+len(stations_high)+len(stations_none))
 print(len(stations))
 
 #part2
-#for station_low in stations_low:
-#	dt = 1
-#	dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
-#	poly, d0 = polyfit(dates, levels, p)
-	#make lists of date and lavel
-#		plot_water_level_with_fit(station.name, dates, levels, 4)
+for station_low in stations_low:
+	dt = 1
+    dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
+    rel_level=
+    poly, d0 = polyfit(dates, levels, 0)
+    poly(date)
+    #make lists of date and lavel
+        plot_water_level_with_fit(station.name, dates, levels, 4)
+
 #part3
 
 #part4
